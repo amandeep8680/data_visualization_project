@@ -10,7 +10,7 @@ st.set_page_config(page_title="Customer Churn Dashboard", layout="wide")
 # -------------------------------
 st.title("📊 Customer Churn Visualization Dashboard")
 
-df = pd.read_csv("customer_churn.csv")
+df = pd.read_csv("customer_churn_data.csv")
 
 # Clean
 df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
@@ -105,3 +105,4 @@ elif section == "Correlation Heatmap":
     fig, ax = plt.subplots()
     sns.heatmap(num_df.corr(), annot=True, cmap="coolwarm", ax=ax)
     st.pyplot(fig)
+
